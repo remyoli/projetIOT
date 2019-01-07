@@ -1,0 +1,23 @@
+const int pinFeu = 11; //La pin 11 est la pin numérique qui renvoi des 1 ou des 0
+const int pinCo2 = 2; //La pin 2 est la pin analogique qui renvoi les valeurs lues par le capteur
+
+void setup() {
+  // put your setup code here, to run once:
+      Serial.begin(9600);
+      pinMode(pinFeu,INPUT);
+      pinMode(pinCo2,INPUT);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+    if (digitalRead(pinFeu) == 1) {
+      Serial.println("ALLLLLUMMMMEEEZZZ LE FEEEEEUUUUU");
+    }else {
+      Serial.println("Il est mort");
+    }
+    //Serial.println (digitalRead(pinFeu));
+    delay (2000);
+    Serial.println (analogRead(pinCo2));
+    delay(100);
+}
